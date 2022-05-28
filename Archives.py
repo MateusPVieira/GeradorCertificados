@@ -14,7 +14,7 @@ def openArchive(location):
 
 def zipFile():
   dir = 'static\data\pdf'
-  shutil.make_archive('PDF', 'zip', 'static\data')  
+  shutil.make_archive('PDF', 'zip', 'static/data')  
   for file in os.scandir(dir):
     os.remove(file.path)
 
