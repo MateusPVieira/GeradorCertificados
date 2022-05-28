@@ -116,7 +116,7 @@ def coupons(database: dict, certificate: str, font_path: dict):
             font = font        )   
 
         # saves the image in png format
-        img.save("static/data/pdf/{}.PDF".format(name)) 
+        img.save("static\data\pdf\{}.PDF".format(name)) 
   
 # Driver Code
 def init(location):
@@ -126,7 +126,7 @@ def init(location):
     FONT = {"bold": "fonts/Raleway-Bold.ttf", "semibold":"fonts/Poppins-SemiBold.ttf", "regular":"fonts/Poppins-Regular.ttf"}
       
     # path to sample certificate
-    CERTIFICATE = "static/img/template.png"
+    CERTIFICATE = "static\img\template.png"
    
     coupons(database, CERTIFICATE, FONT)
     Archives.zipFile()
