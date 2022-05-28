@@ -1,6 +1,5 @@
 
 # imports
-import zipfile
 from PIL import Image, ImageDraw, ImageFont
 import Archives
   
