@@ -127,8 +127,7 @@ def init(location):
     FONT = {"bold": "fonts/Raleway-Bold.ttf", "semibold":"fonts/Poppins-SemiBold.ttf", "regular":"fonts/Poppins-Regular.ttf"}
       
     # path to sample certificate
-    archiveName= "template.png"
-    CERTIFICATE = f"static\img\{archiveName}"
+    CERTIFICATE = f"static/img/template.png"
    
     coupons(database, CERTIFICATE, FONT)
     Archives.zipFile()
