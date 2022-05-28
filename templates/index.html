@@ -1,21 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gerador de Certificados</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <h1>Gerador de Certificados</h1>
-  </header>
-  <main>
-    <form action="POST">
-      <input type="file">
-     <button class="send"><a href="/send">Enviar csv</a></button>
-    </form>
-  </main>
-</body>
-</html>
+<!doctype html>
+<title>Gerador de Certificados</title>
+<link rel="stylesheet" href="static/css/style.css">
+<main>
+<h1>Envie um arquivo csv</h1>
+<form action="" method=post enctype=multipart/form-data>
+<label for="file">Selecionar Arquivo</label>
+  <input class="file" type=file name=file id="file">
+  <p class="filename">Nenhum arquivo inserido</p>
+    <button class ="submit"type=submit value=Upload>Upload</button>
+</form>
+   <div class="waiting">
+            <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            <p>Processando, por favor aguarde...</p>
+        </div>
+</main>
+<script>
+ onload = () => { showHideElement('.waiting', 'none')
+const output = document.querySelector('.filename');
+const filepicker = document.getElementById('file');
+
+filepicker.addEventListener('change', (event) => {
+const file = event.target.files;
+output.textContent = file[0].name;
+
+})
+inputButton = document.querySelector("button")
+inputButton.addEventListener('click', ()=> {
+showHideElement('.waiting', 'show')
+setTimeout(function(){
+  showHideElement('.waiting', 'none')
+}, 5000);})
+
+function showHideElement(element, action) {
+// toggle
+element = document.querySelector(element).classList
+
+if (action == 'hide') {
+element.add('hide')
+} else if (action == 'none') {
+ element.add('none')
+} else {
+ if(element.contains('hide')) element.remove('hide')
+ else element.remove('none')
+}
+}
+}
+</script>
