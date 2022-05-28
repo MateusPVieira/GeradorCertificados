@@ -1,5 +1,6 @@
 
 # imports
+from platform import architecture
 from PIL import Image, ImageDraw, ImageFont
 import Archives
   
@@ -126,7 +127,8 @@ def init(location):
     FONT = {"bold": "fonts/Raleway-Bold.ttf", "semibold":"fonts/Poppins-SemiBold.ttf", "regular":"fonts/Poppins-Regular.ttf"}
       
     # path to sample certificate
-    CERTIFICATE = "static\img\template.png"
+    archiveName= "template.png"
+    CERTIFICATE = f"static\img\{archiveName}"
    
     coupons(database, CERTIFICATE, FONT)
     Archives.zipFile()
