@@ -4,7 +4,7 @@ import os
  
 
 def openArchive(location):
-  archive = open(f"static\data\pdf\{location}", 'r')
+  archive = open(f"static\data\pdf\{location}", encoding ='ISO-8859-1')
   database= {"curso": archive.readline().rstrip("\n"), "instrutor": archive.readline().rstrip("\n"), "local": archive.readline().rstrip("\n"), "carga": archive.readline().rstrip("\n"), "data": archive.readline().rstrip("\n"), "nomes": []}
 
   for line in archive:
