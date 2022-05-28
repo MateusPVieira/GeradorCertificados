@@ -117,7 +117,7 @@ def coupons(database: dict, certificate: str, font_path: dict):
             font = font        )   
 
         # saves the image in png format
-        img.save("static\data\pdf\{}.PDF".format(name)) 
+        img.save("static/data/pdf/{}.PDF".format(name)) 
   
 # Driver Code
 def init(location):
