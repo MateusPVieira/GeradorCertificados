@@ -8,11 +8,11 @@ def openArchive(location):
   archive = io.open(f"static\data\pdf\{location}","r", encoding="utf-8")
   archive.readline()
   database= {
-  "curso": archive.readline().rstrip("\n").strip("Curso:;"), 
-  "instrutor": "Instrutor: " + archive.readline().rstrip("\n").strip("Instrutor:;"), 
-  "local": "Local: " + archive.readline().rstrip("\n").strip("Local:;"),
-  "carga": "Carga Horária: " + archive.readline().rstrip("\n").strip("Carga Horária:;"), 
-  "data": "Data: " + archive.readline().rstrip("\n").strip("Data:;"), 
+  "curso": archive.readline().strip("\n").replace(";", " "), 
+  "instrutor": archive.readline().strip("\n").replace(";", " "), 
+  "local": archive.readline().strip("\n").replace(";", " "),
+  "carga": archive.readline().strip("\n").replace(";", " "), 
+  "data": archive.readline().strip("\n").replace(";", " "), 
   "nomes": []
   }
   archive.readline()
