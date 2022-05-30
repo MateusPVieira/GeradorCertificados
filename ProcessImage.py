@@ -44,7 +44,7 @@ def coupons(database: dict, certificate: str, font_path: dict):
             92 # change this according to your needs
         )
 
-        text_y_position = 1225
+        text_y_position = 1220
         text_x_position = 133 
         text_color = "#353435"
 
@@ -63,8 +63,8 @@ def coupons(database: dict, certificate: str, font_path: dict):
             56 # change this according to your needs
         )
 
-        text_y_position = 1505
-        text_x_position = 428 
+        text_y_position = 1400
+        text_x_position = 144 
         text_color = "#353435"
 
         draw.text(
@@ -77,8 +77,8 @@ def coupons(database: dict, certificate: str, font_path: dict):
             
         # Local 
 
-        text_y_position = 1616
-        text_x_position = 333       
+        text_y_position = 1500
+        text_x_position = 144       
         draw.text(
             (
                 text_x_position,
@@ -89,8 +89,8 @@ def coupons(database: dict, certificate: str, font_path: dict):
 
         # Carga Horaria 
 
-        text_y_position = 1733
-        text_x_position = 603       
+        text_y_position = 1600
+        text_x_position = 144       
         draw.text(
             (
                 text_x_position,
@@ -102,15 +102,13 @@ def coupons(database: dict, certificate: str, font_path: dict):
         # Data 
         font = ImageFont.truetype(
             font_path['regular'],
-            40 # change this according to your needs
+            56 # change this according to your needs
         )
-        text_width, _ = draw.textsize(name, font = font)
-        image_width = 700
-        text_y_position = 2125
-        text_x_position = 333       
+        text_y_position = 1700
+        text_x_position = 144      
         draw.text(
             (
-                295+(image_width - text_width)/2,
+                text_x_position,
                 text_y_position
             ),
             database['data'],text_color,
@@ -127,7 +125,7 @@ def init(location):
     FONT = {"bold": "fonts/Raleway-Bold.ttf", "semibold":"fonts/Poppins-SemiBold.ttf", "regular":"fonts/Poppins-Regular.ttf"}
       
     # path to sample certificate
-    CERTIFICATE = f"static/img/template.png"
+    CERTIFICATE = "static/img/template.png"
    
     coupons(database, CERTIFICATE, FONT)
     Archives.zipFile()

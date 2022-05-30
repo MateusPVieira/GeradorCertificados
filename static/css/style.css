@@ -22,6 +22,28 @@ main{
   box-shadow: 6px 5px 5px rgba(0, 0, 0, 0.384);
 }
 
+aside{
+  display: flex;
+
+}
+
+aside button{
+margin: auto;
+width: 10rem;
+padding: 0.7rem 1.25rem;
+color: #fff;
+background-color: #1f1f1f;
+border-radius: 30px;
+font-weight: 700;
+border-color: #474747;  
+cursor: pointer;
+}
+
+a{
+  text-decoration: none;
+  color: #fff;
+}
+
 h1{
  align-self: center;
 }
@@ -47,7 +69,6 @@ label {
   cursor: pointer;
 }
 button.submit{
-  padding: 20px 10px;
   width: 15rem;
   margin: 5rem;
   padding: 0.7rem 1.25rem;

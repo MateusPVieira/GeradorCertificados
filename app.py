@@ -33,6 +33,11 @@ def downloadFile ():
     #For windows you need to use drive name [ex: F:/Example.pdf]
     path = "PDF.zip"
     return send_file(path, as_attachment=True )
+
+@app.route('/template')
+def downloadTemplate ():
+    pathTemplate = "static\data\CSV\TemplateUTF.csv"
+    return send_file(pathTemplate, as_attachment=True )
     
 if __name__ == '__main__':
   app.run(debug=True)
