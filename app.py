@@ -36,7 +36,7 @@ def downloadFile ():
 
 @app.route('/template')
 def downloadTemplate ():
-    pathTemplate = "static\data\CSV\TemplateUTF.csv"
+    pathTemplate = "static/data/CSV/TemplateUTF.csv"
     return send_file(pathTemplate, as_attachment=True )
     
 if __name__ == '__main__':
