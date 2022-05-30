@@ -3,7 +3,7 @@ from flask import Flask, request, redirect, send_file, url_for, render_template
 from werkzeug.utils import secure_filename
 import ProcessImage
 
-UPLOAD_FOLDER = 'static\data\pdf'
+UPLOAD_FOLDER = 'static/data/pdf'
 ALLOWED_EXTENSIONS = set(['txt', 'csv'])
 
 app = Flask(__name__)
@@ -18,7 +18,7 @@ def upload_file():
         file = request.files['file']
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
-            file.save(f"{UPLOAD_FOLDER}\{filename}")
+            file.save(f"{UPLOAD_FOLDER}/{filename}")
             return redirect(url_for('uploaded_file',
                                     filename=filename))
     return render_template("index.html")
