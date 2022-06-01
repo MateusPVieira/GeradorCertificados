@@ -5,7 +5,7 @@ import io
 
 
 def openArchive(location):
-  archive = io.open(f"static\data\pdf\{location}","r", encoding="utf-8")
+  archive = io.open(f"static/data/pdf/{location}","r", encoding="utf-8")
   archive.readline()
   database= {
   "curso": archive.readline().strip("\n").replace(";", " "), 
