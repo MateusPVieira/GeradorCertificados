@@ -3,7 +3,7 @@ from flask import Flask, request, redirect, send_file, url_for, render_template
 from werkzeug.utils import secure_filename
 import ProcessImage
 
-UPLOAD_FOLDER = '/static/data/pdf'
+UPLOAD_FOLDER = "static/data/"
 ALLOWED_EXTENSIONS = set(['txt', 'csv'])
 
 app = Flask(__name__)

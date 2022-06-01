@@ -5,7 +5,7 @@ import io
 
 
 def openArchive(location):
-  archive = io.open(f"static/data/pdf/{location}","r", encoding="utf-8")
+  archive = io.open(f"static/data/{location}","r", encoding="utf-8")
   archive.readline()
   database= {
   "curso": archive.readline().strip("\n").replace(";", " "), 
@@ -19,7 +19,7 @@ def openArchive(location):
   for line in archive:
     database['nomes'].append(line.rstrip("\n").strip(";"))
   archive.close()
-  os.remove(f"static/data/pdf/{location}")
+  os.remove(f"static/data/{location}")
   return database
 
 def zipFile():
