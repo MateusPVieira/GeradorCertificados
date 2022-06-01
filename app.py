@@ -3,11 +3,13 @@ from flask import Flask, request, redirect, send_file, url_for, render_template
 from werkzeug.utils import secure_filename
 import ProcessImage
 
-UPLOAD_FOLDER = 'static\data\pdf'
+UPLOAD_FOLDER = 'static/data/pdf'
 ALLOWED_EXTENSIONS = set(['txt', 'csv'])
 
 app = Flask(__name__)
+
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
