@@ -12,22 +12,19 @@ def coupons(database: dict, certificate: str, font_path: dict):
         text_y_position = 893
         text_x_position = 130
         text_color = "#f1552b"
-        # opens the image
+        # open
         img = Image.open(certificate, mode ='r')
         img.load()
         background = Image.new("RGB", img.size, (255, 255, 255))
-        background.paste(img, mask=img.split()[3]) # 3 is the alpha channel
+        background.paste(img, mask=img.split()[3]) # 3 alpha channel
         img = background
    
-        # creates a drawing canvas overlay 
-        # on top of the image
         draw = ImageDraw.Draw(img)
    
-        # gets the font object from the 
         # font file (TTF)
         font = ImageFont.truetype(
             font_path['bold'],
-            150 # change this according to your needs
+            150 
         )
    
         draw.text(
@@ -41,7 +38,7 @@ def coupons(database: dict, certificate: str, font_path: dict):
         #NomeCurso
         font = ImageFont.truetype(
             font_path['semibold'],
-            92 # change this according to your needs
+            92 
         )
 
         text_y_position = 1220
@@ -60,7 +57,7 @@ def coupons(database: dict, certificate: str, font_path: dict):
         #Instrutor
         font = ImageFont.truetype(
             font_path['regular'],
-            56 # change this according to your needs
+            56 #
         )
 
         text_y_position = 1400
@@ -102,7 +99,7 @@ def coupons(database: dict, certificate: str, font_path: dict):
         # Data 
         font = ImageFont.truetype(
             font_path['regular'],
-            56 # change this according to your needs
+            56 
         )
         text_y_position = 1700
         text_x_position = 144      
@@ -117,14 +114,14 @@ def coupons(database: dict, certificate: str, font_path: dict):
         # saves the image in png format
         img.save("static/data/pdf/{}.PDF".format(name)) 
   
-# Driver Code
+
 def init(location):
     database = Archives.openArchive(location)
       
     # path to font
     FONT = {"bold": "fonts/Raleway-Bold.ttf", "semibold":"fonts/Poppins-SemiBold.ttf", "regular":"fonts/Poppins-Regular.ttf"}
       
-    # path to sample certificate
+    # path 
     CERTIFICATE = "static/img/template.png"
    
     coupons(database, CERTIFICATE, FONT)
