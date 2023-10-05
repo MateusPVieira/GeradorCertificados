@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'Gerador-de-Certificados'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_7D4B9F033A9A4CC493A50A88B92EC340 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_623FB8E54B1E462B8EF654A380F4746D }}
